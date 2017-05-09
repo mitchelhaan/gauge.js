@@ -683,7 +683,9 @@
         this.ctx.arc(w, h, radius, (1 + this.options.angle) * Math.PI, displayedAngle, false);
         this.ctx.lineWidth = this.lineWidth;
         this.ctx.stroke();
-        this.ctx.strokeStyle = this.options.strokeColor;
+        if (this.options.strokeColor !== null) {
+          this.ctx.strokeStyle = this.options.strokeColor;
+        }
         this.ctx.beginPath();
         this.ctx.arc(w, h, radius, displayedAngle, (2 - this.options.angle) * Math.PI, false);
         this.ctx.stroke();

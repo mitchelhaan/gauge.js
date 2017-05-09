@@ -492,7 +492,8 @@ class Gauge extends BaseGauge
 			@ctx.lineWidth = @lineWidth
 			@ctx.stroke()
 
-			@ctx.strokeStyle = @options.strokeColor
+			if @options.strokeColor != null
+				@ctx.strokeStyle = @options.strokeColor
 			@ctx.beginPath()
 			@ctx.arc(w, h, radius, displayedAngle, (2 - @options.angle) * Math.PI, false)
 			@ctx.stroke()
